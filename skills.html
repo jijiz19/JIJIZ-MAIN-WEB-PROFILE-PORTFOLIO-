@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills | Jizryl S. Arboleda</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .skill-icon {
+            display: inline-block;
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        .badge.btn-outline-warning {
+            display: inline-block;
+            animation: floating 4s ease-in-out infinite;
+            margin: 5px;
+            padding: 10px 15px;
+            border-radius: 20px;
+        }
+
+        .skill-card:nth-child(odd) .skill-icon { animation-delay: 0.5s; }
+        .badge.btn-outline-warning:nth-child(even) { animation-delay: 0.7s; }
+
+        body.light-mode .badge.btn-outline-warning {
+            color: #212529 !important;
+            border-color: #ffc107;
+        }
+        
+        body.light-mode .section-title, 
+        body.light-mode h1, 
+        body.light-mode h3 {
+            color: #212529;
+        }
+
+        .skill-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 193, 7, 0.1);
+            border-color: #ffc107;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg custom-navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">&lt;JijizAnalyst.dev/&gt;</a>
+            <div class="ms-auto me-2">
+                <button class="btn btn-dark btn-sm" onclick="toggleTheme()" id="theme-btn">🌙 Dark Mode</button>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="works.html">Works</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold active" href="skills.html">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="testimonials.html">Testimonials</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="summary.html">Summary</a></li>
+                    <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <header class="work-header text-dark mb-5 text-center">
+            <h1 class="fw-bold">Technical Skills</h1>
+            <p class="mb-0">Mastery in Google, Microsoft, and AI-Driven Data Solutions</p>
+        </header>
+
+        <h3 class="mb-4"><i class="fa-brands fa-google me-2" style="color: #4285F4;"></i>Google Workspace</h3>
+        <div class="row g-4 mb-5">
+            <div class="col-6 col-md-3">
+                <div class="skill-card">
+                    <i class="fa-solid fa-file-excel skill-icon" style="color: #0F9D58;"></i>
+                    <h6>Google Sheets</h6>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="skill-card">
+                    <i class="fa-brands fa-google-drive skill-icon" style="color: #34A853;"></i>
+                    <h6>Google Drive</h6>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="skill-card">
+                    <i class="fa-brands fa-wpforms skill-icon" style="color: #673AB7;"></i>
+                    <h6>Google Forms</h6>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="skill-card">
+                    <i class="fa-solid fa-envelope skill-icon" style="color: #EA4335;"></i>
+                    <h6>Gmail</h6>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="mb-4"><i class="fa-brands fa-windows me-2" style="color: #0078D4;"></i>Microsoft 365 & Power Platform</h3>
+        <div class="row g-4 mb-5">
+            <div class="col-6 col-md-3">
+                <div class="skill-card">
+                    <i class="fa-solid fa-file-excel skill-icon" style="color: #1D6F42;"></i>
+                    <h6>MS Excel (VBA/Pivot)</h6>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="skill-card">
+                    <i class="fa-solid fa-chart-simple skill-icon" style="color: #F2C811;"></i>
+                    <h6>Power BI</h6>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="skill-card">
+                    <i class="fa-solid fa-users-rectangle skill-icon" style="color: #6264A7;"></i>
+                    <h6>MS Teams</h6>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="skill-card">
+                    <i class="fa-solid fa-envelope-open-text skill-icon" style="color: #0078D4;"></i>
+                    <h6>Outlook</h6>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="mb-4"><i class="fa-solid fa-microchip me-2" style="color: #8E44AD;"></i>AI & API Integration</h3>
+        <div class="row g-4 mb-5">
+            <div class="col-6 col-md-3">
+                <div class="skill-card">
+                    <i class="fa-solid fa-robot skill-icon" style="color: #8E44AD;"></i>
+                    <h6>Gemini / ChatGPT / Grok</h6>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="skill-card">
+                    <i class="fa-solid fa-plug-circle-check skill-icon" style="color: #FF5722;"></i>
+                    <h6>API / Formspree</h6>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="skill-card">
+                    <i class="fa-solid fa-wand-magic-sparkles skill-icon" style="color: #00D2FF;"></i>
+                    <h6>Prompt Engineering</h6>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="skill-card">
+                    <i class="fa-solid fa-database skill-icon" style="color: #f1c40f;"></i>
+                    <h6>SQL Querying</h6>
+                </div>
+            </div>
+        </div>
+                <h3 class="mb-4"><i class="fa-solid fa-palette me-2" style="color: #FF61D2;"></i>Creative & Visual Design</h3>
+        <div class="row g-4 mb-5">
+            <div class="col-6 col-md-4">
+                <div class="skill-card">
+                    <i class="fa-solid fa-layer-group skill-icon" style="color: #00C4CC;"></i>
+                    <h6>Canva (Graphic Design)</h6>
+                </div>
+            </div>
+            <div class="col-6 col-md-4">
+                <div class="skill-card">
+                    <i class="fa-solid fa-video skill-icon" style="color: #FF0000;"></i>
+                    <h6>CapCut (Video Editing)</h6>
+                </div>
+            </div>
+            
+            <div class="col-6 col-md-4">
+                <div class="skill-card">
+                    <i class="fa-solid fa-wand-magic skill-icon" style="color: #5B21B6;"></i>
+                    <h6>PicsArt (Photo Editing)</h6>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="mb-4"><i class="fa-solid fa-gears me-2" style="color: #FF9800;"></i>E-commerce & Automation</h3>
+        <div class="row g-4 mb-5">
+            <div class="col-6 col-md-3">
+                <div class="skill-card">
+                    <i class="fa-brands fa-shopify skill-icon" style="color: #95BF47;"></i>
+                    <h6>Shopify Management</h6>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="skill-card">
+                    <i class="fa-solid fa-bolt skill-icon" style="color: #FF4A00;"></i>
+                    <h6>Zapier Automation</h6>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="skill-card">
+                    <i class="fa-solid fa-envelope-open-text skill-icon" style="color: #0052FF;"></i>
+                    <h6>Klaviyo Marketing</h6>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="skill-card">
+                    <i class="fa-solid fa-users-gear skill-icon" style="color: #2ECC71;"></i>
+                    <h6>CRM Tools</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-5 text-center">
+            <h3 class="mb-4">Operational Expertise</h3>
+            <div class="d-flex flex-wrap justify-content-center gap-2">
+                <span class="badge btn btn-outline-warning">SAP / ERP Systems</span>
+                <span class="badge btn btn-outline-warning">Inventory Management</span>
+                <span class="badge btn btn-outline-warning">Operational Audit</span>
+                <span class="badge btn btn-outline-warning">Data Integrity</span>
+                <span class="badge btn btn-outline-warning">Noah / DMS Systems</span>
+            </div>
+        </div>
+    </div>
+
+    <footer class="main-footer mt-5">
+        <div class="container text-center">
+            <p class="mb-1">© 2025 Jizryl Arboleda | Portfolio Website</p>
+            <small>Aspiring MIS Officer & Data Analyst</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
