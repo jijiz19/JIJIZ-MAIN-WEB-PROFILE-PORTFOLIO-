@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MIS Documentation | Jizryl Arboleda</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <style>
+    <link rel="stylesheet" href="style.css"> <style>
         /* --- FLOATING ANIMATION --- */
         @keyframes floatCard {
             0% { transform: translateY(0px); }
@@ -21,8 +20,14 @@
             border: 1px solid #444;
             transition: all 0.4s ease;
             height: 250px;
-            background: #111; /* Darker background for technical shots */
+            background: #111; /* Dark background default para sa technical shots */
             animation: floatCard 4s ease-in-out infinite;
+        }
+
+        /* Support para sa Light Mode cards */
+        body.light-mode .photo-card {
+            background: #f8f9fa;
+            border-color: #ddd;
         }
 
         .col-md-4:nth-child(1) .photo-card { animation-delay: 0s; }
@@ -39,11 +44,18 @@
         .photo-card img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* Contain para hindi maputol ang diagrams */
+            object-fit: contain; 
             padding: 10px;
             background: #1a1a1a;
+            transition: 0.3s;
         }
 
+        /* Light mode adjustment para sa image background */
+        body.light-mode .photo-card img {
+            background: #ffffff;
+        }
+
+        /* Modal remains dark for better contrast with technical diagrams */
         .modal-content {
             background-color: rgba(0, 0, 0, 0.95);
             border: 1px solid #ffc107;
@@ -54,31 +66,36 @@
         }
     </style>
 </head>
-<body class="bg-dark text-white">
-
-    <nav class="py-3 border-bottom border-secondary sticky-top bg-dark">
+<body> <nav class="navbar navbar-expand-lg custom-navbar sticky-top">
         <div class="container d-flex justify-content-between align-items-center">
-            <a href="gallery.html" class="text-decoration-none text-secondary fw-bold">← Back to Albums</a>
-            <span class="text-warning fw-bold small text-uppercase">Technical Archives</span>
+            <a href="gallery.html" class="text-decoration-none text-secondary fw-bold btn-back">← Back to Albums</a>
+            
+            <div class="ms-auto me-3">
+                <button class="btn btn-dark btn-sm" onclick="toggleTheme()" id="theme-btn">
+                    🌙 Dark Mode
+                </button>
+            </div>
+            
+            <span class="text-warning fw-bold small text-uppercase tracking-wider d-none d-sm-inline">Technical Archives</span>
         </div>
     </nav>
 
     <main class="container my-5">
-        <h2 class="text-warning mb-2 text-center">MIS Documentation</h2>
+        <h2 class="text-warning mb-2 text-center fw-bold">MIS Documentation</h2>
         <p class="text-secondary text-center mb-5 small">Systems Planning, Data Architecture, and Operational Workflows</p>
         
         <div class="row g-4">
-            <div class="col-md-4 col-6">
+            <div class="col-md-4 col-6 feature">
                 <div class="photo-card" data-bs-toggle="modal" data-bs-target="#misModal" data-bs-slide-to="0">
                     <img src="diagram1.jpg" alt="System Flowchart">
                 </div>
             </div>
-            <div class="col-md-4 col-6">
+            <div class="col-md-4 col-6 feature">
                 <div class="photo-card" data-bs-toggle="modal" data-bs-target="#misModal" data-bs-slide-to="1">
                     <img src="database1.jpg" alt="Database Schema">
                 </div>
             </div>
-            <div class="col-md-4 col-6">
+            <div class="col-md-4 col-6 feature">
                 <div class="photo-card" data-bs-toggle="modal" data-bs-target="#misModal" data-bs-slide-to="2">
                     <img src="dashboard1.jpg" alt="Data Analytics Dashboard">
                 </div>
@@ -92,7 +109,6 @@
                 <div class="text-end p-3">
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                
                 <div class="modal-body p-0">
                     <div id="misCarousel" class="carousel slide" data-bs-ride="false">
                         <div class="carousel-inner">
@@ -109,7 +125,6 @@
                                 <div class="text-center py-3 text-warning">Management Information System Dashboard</div>
                             </div>
                         </div>
-
                         <button class="carousel-control-prev" type="button" data-bs-target="#misCarousel" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         </button>
@@ -123,8 +138,8 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <script>
+    <script src="script.js"></script> <script>
+        // Modal and Carousel Trigger logic
         const myModal = document.getElementById('misModal');
         const carouselEl = document.getElementById('misCarousel');
         const carousel = new bootstrap.Carousel(carouselEl);
