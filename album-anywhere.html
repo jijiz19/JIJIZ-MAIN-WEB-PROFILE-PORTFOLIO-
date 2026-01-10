@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
-
+        /* --- ANIMATIONS --- */
         @keyframes floatCard {
             0% { transform: translateY(0px); }
             50% { transform: translateY(-12px); }
@@ -22,6 +22,13 @@
             transition: all 0.4s ease;
             height: 280px;
             animation: floatCard 5s ease-in-out infinite;
+            background: #1a1a1a;
+        }
+
+        /* Light Mode adjustment para sa cards */
+        body.light-mode .photo-card {
+            background: #fff;
+            border-color: #ddd;
         }
 
         .col-md-4:nth-child(3n+1) .photo-card { animation-delay: 0s; }
@@ -43,10 +50,7 @@
             transition: 0.4s;
         }
 
-        .photo-card:hover img {
-            filter: brightness(1.1);
-        }
-
+        /* Modal styling remains dark for better viewing of photos */
         .modal-content {
             background-color: rgba(0, 0, 0, 0.95);
             border: 1px solid #ffc107;
@@ -57,12 +61,17 @@
         }
     </style>
 </head>
-<body class="bg-dark text-white">
-
-    <nav class="py-3 border-bottom border-secondary sticky-top bg-dark">
+<body> <nav class="navbar navbar-expand-lg custom-navbar sticky-top">
         <div class="container d-flex justify-content-between align-items-center">
             <a href="gallery.html" class="text-decoration-none text-secondary fw-bold btn-back">← Back to Albums</a>
-            <span class="text-warning fw-bold small text-uppercase tracking-widest">Personal Moments</span>
+            
+            <div class="ms-auto me-3">
+                <button class="btn btn-dark btn-sm" onclick="toggleTheme()" id="theme-btn">
+                    🌙 Dark Mode
+                </button>
+            </div>
+            
+            <span class="text-warning fw-bold small text-uppercase tracking-widest d-none d-sm-inline">Personal Moments</span>
         </div>
     </nav>
 
@@ -71,32 +80,32 @@
         <p class="text-secondary mb-5">Life beyond data—travels, sceneries, and random captures.</p>
         
         <div class="row g-4">
-            <div class="col-md-4 col-6">
+            <div class="col-md-4 col-6 feature">
                 <div class="photo-card" data-bs-toggle="modal" data-bs-target="#anywhereModal" data-bs-slide-to="0">
                     <img src="anywhere-cover.jpeg" alt="Travel 1">
                 </div>
             </div>
-            <div class="col-md-4 col-6">
+            <div class="col-md-4 col-6 feature">
                 <div class="photo-card" data-bs-toggle="modal" data-bs-target="#anywhereModal" data-bs-slide-to="1">
                     <img src="travel2.jpeg" alt="Travel 2">
                 </div>
             </div>
-            <div class="col-md-4 col-6">
+            <div class="col-md-4 col-6 feature">
                 <div class="photo-card" data-bs-toggle="modal" data-bs-target="#anywhereModal" data-bs-slide-to="2">
                     <img src="travel3.jpeg" alt="Travel 3">
                 </div>
             </div>
-            <div class="col-md-4 col-6">
+            <div class="col-md-4 col-6 feature">
                 <div class="photo-card" data-bs-toggle="modal" data-bs-target="#anywhereModal" data-bs-slide-to="3">
                     <img src="travel4.jpeg" alt="Travel 4">
                 </div>
             </div>
-            <div class="col-md-4 col-6">
+            <div class="col-md-4 col-6 feature">
                 <div class="photo-card" data-bs-toggle="modal" data-bs-target="#anywhereModal" data-bs-slide-to="4">
                     <img src="travel5.jpeg" alt="Travel 5">
                 </div>
             </div>
-            <div class="col-md-4 col-6">
+            <div class="col-md-4 col-6 feature">
                 <div class="photo-card" data-bs-toggle="modal" data-bs-target="#anywhereModal" data-bs-slide-to="5">
                     <img src="travel6.jpeg" alt="Travel 6">
                 </div>
@@ -110,7 +119,6 @@
                 <div class="text-end p-3">
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                
                 <div class="modal-body p-0">
                     <div id="anywhereCarousel" class="carousel slide" data-bs-ride="false">
                         <div class="carousel-inner">
@@ -139,7 +147,6 @@
                                 <div class="text-center py-3 text-warning italic">"Capturing moments that last."</div>
                             </div>
                         </div>
-
                         <button class="carousel-control-prev" type="button" data-bs-target="#anywhereCarousel" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         </button>
@@ -153,8 +160,8 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <script>
+    <script src="script.js"></script> <script>
+        // Modal & Carousel initialization
         const myModal = document.getElementById('anywhereModal');
         const carouselEl = document.getElementById('anywhereCarousel');
         const carousel = new bootstrap.Carousel(carouselEl);
