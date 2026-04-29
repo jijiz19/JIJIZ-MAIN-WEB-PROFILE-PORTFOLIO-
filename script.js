@@ -67,10 +67,10 @@ const text = "Hello, I'm Jizryl S. Arboleda";
 let i = 0;
 
 function typeWriter() {
-if (i < text.length) {
-typingText.innerHTML += text.charAt(i);
-i++;
-setTimeout(typeWriter, 100); // speed
-}
+    if (i < text.length) {
+        typingText.innerHTML = text.substring(0, i + 1); // ← replaces instead of appends
+        i++;
+        setTimeout(typeWriter, 100);
+    }
 }
 document.addEventListener("DOMContentLoaded", typeWriter);
